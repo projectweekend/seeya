@@ -1,0 +1,7 @@
+bot:
+    build: .
+    command: node main.js -c ./test_config.json
+    volumes:
+        - ./main.js:/src/main.js
+        - ./app:/src/app
+        - ./test_config.json:/src/test_config.json

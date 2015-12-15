@@ -1,0 +1,27 @@
+{
+  "name": "seeya",
+  "version": "1.0.0",
+  "description": "Automatically leave annoying Slack channels",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projectweekend/seeya.git"
+  },
+  "keywords": [
+    "slack"
+  ],
+  "author": "Brian Hines",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/projectweekend/seeya/issues"
+  },
+  "homepage": "https://github.com/projectweekend/seeya#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "request": "^2.67.0",
+    "ws": "^0.8.1"
+  }
+}
