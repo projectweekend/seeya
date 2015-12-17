@@ -2,6 +2,8 @@
 var EventEmitter = require('events');
 var request = require('request');
 var WebSocket = require('ws');
+var bunyan = require('bunyan');
+var log = bunyan.createLogger({name: 'seeya'});
 
 
 var exports = module.exports = {};
@@ -53,9 +55,12 @@ class ChannelMonitor extends EventEmitter {
             var message = JSON.parse(data);
             if (message.type === 'message') {
                 var isChannel = _this.channels.indexOf(message.channel) > -1;
-                var isMention = message.text.indexOf(_this.targetString) > -1;
-                if (isChannel && isMention) {
-                    return _this.emit('mention', message.channel);
+                if (isChannel) {
+                    log.info(message);
+                    var isMention = message.text.indexOf(_this.targetString) > -1;
+                    if (isMention) {
+                        return _this.emit('mention', message.channel);
+                    }
                 }
             }
         });
