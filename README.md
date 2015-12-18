@@ -24,6 +24,9 @@ Configuration is saved in a JSON file and passed to the bot via a command line a
 
 
 ## Launch it
+
+Two volumes need to be mounted into the running container, one for the config file and one for the log file:
+
 ```
-docker run -v /path/to/config.json:/src/config.json projectweekend/seeya -c ./config.json
+docker run -v /path/to/config.json:/src/config.json -v /var/tmp/seeya_logs.json:/var/tmp/seeya_logs.json projectweekend/seeya -c ./config.json
 ```
